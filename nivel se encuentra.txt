@@ -1,0 +1,23 @@
+obtenerNivel(Comparable unaEtiqueta)
+
+lengauje natural: dado una etiqueta se busca por nivel, incrementandose en 1 por cada hijo hasta llegar al elemento deseado
+precondiciones: ser llamado por el metodo de arbol
+postcondiciones:
+  - se devuelve el nivel, en caso de existir.
+  - en caso de no existir de retorna -1
+
+psudocodigo:
+COM
+  nivel = -1
+  si unaEtiqueta > this.etiqueta:
+    si hijoIzq <> nulo:
+      nivel = hijoIzq.obtenerNivel(unaEtiqueta)
+  sino unaEtiqueta < this.etiqueta
+    si hijoDer <> nulo:
+      nivel = hijoDer.obtenerNivel(unaEtiqueta)
+  sino
+    retorno 0
+
+  si nivel = -1:
+    retorno -1
+FIN

@@ -1,0 +1,40 @@
+ContarHojas ARBOL
+lenguaje natural: dado un árbol que instancie esta función, se devuelve el numero de hojas que tiene el árbol. esta función llama a la misma que se encuentra a nivel de nodo
+
+precondiciones:
+postcondiciones:
+    - se devuelve el numero de hojas en el árbol
+
+pseudocodigo:
+
+ContarHojas()
+COM
+    si es vacio:
+        retorna 0;
+    retornar raiz.ContarHojas()
+FIN
+
+ContarHojas Nodo
+lenguaje natural: dado por el llamado del árbol se ejecuta a partir de la raíz recorriendo cada elemento del árbol hasta llegar a la hoja, al llegar a la hora la cuenta y vuelve hasta llegar a la raiz, asi con cada hoja
+precondiciones:
+    - debe de ser instanciado por el método del árbol
+postcondiciones:
+    - devuelve el numero de hojas en el arbol
+
+pseudocodigo:
+COM
+    SI this.hijoIzq <> nulo:
+        x = this.hijoIz.ContarHojas()
+    
+    Si this.hijoDer <> nulo:
+        y = this.hijoDer.ContarHojas()
+
+    Si this.hijoDer = nulo y this.hijoIzq = nulo:
+        retornar 1 
+    
+    retornar x + y
+FIN
+
+tiempo de ejecución:
+El tiempo de ejecución del algoritmo del árbol depende del algoritmo del nodo,
+En todos los casos el algoritmo va a ser de o(N) ya que tiene que recorrer todo el árbol para llegar a todas las hojas.
